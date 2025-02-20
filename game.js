@@ -3,19 +3,45 @@ console.log("hello world!")
 function getComputerChoice() {
     let number = Math.floor(Math.random() * 3) + 1;
 
-    let choice;
+    let computer_choice;
 
-    switch (number){
+    switch (number) {
         case 1:
-            choice = "Rock"
+            computer_choice = "Rock";
             break;
         case 2:
-            choice = "Paper"
+            computer_choice = "Paper";
             break;
         case 3:
-            choice = "Scissors"
-            break;    
+            computer_choice = "Scissors";
+            break;
     }
 
-    return choice;
+    return computer_choice;
+}
+
+
+
+function getHumanChoice() {
+    let promtMessage = (prompt("Type rock, paper or scissors", "Rock").toLowerCase() || "");
+
+    let human_choice;
+
+    switch (promtMessage) {
+        case "rock":
+            human_choice = "Rock";
+            break;
+        case "paper":
+            human_choice = "Paper";
+            break;
+        case "scissors":
+            human_choice = "Scissors";
+            break;
+        default:
+            human_choice = "false";
+
+    }
+
+    return human_choice;
+
 }
