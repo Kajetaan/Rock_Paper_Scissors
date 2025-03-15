@@ -1,0 +1,25 @@
+html, body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.userinterface {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header, .footer {
+    display: flex;
+    justify-content: center;
+}
+
+.score_counter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

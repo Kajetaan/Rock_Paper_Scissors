@@ -1,6 +1,12 @@
 console.log("Welcome to ROCK PAPER AAAAND SCIIISSSORRRSSSS!!!")
 
-let human_score, computer_score = 0;
+
+
+let human_score = 0;
+let computer_score = 0;
+let winner;
+let final_score;
+let looser_score;
 
 function getComputerChoice() {
     let number = Math.floor(Math.random() * 3) + 1;
@@ -9,13 +15,13 @@ function getComputerChoice() {
 
     switch (number) {
         case 1:
-            computer_choice = "Rock";
+            computer_choice = "rock";
             break;
         case 2:
-            computer_choice = "Paper";
+            computer_choice = "paper";
             break;
         case 3:
-            computer_choice = "Scissors";
+            computer_choice = "scissors";
             break;
     }
 
@@ -23,19 +29,21 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let promptMessage = (prompt("Type rock, paper or scissors", "Rock").toLowerCase() || "");
-
-    let human_choice;
+    let promptMessage = prompt("Type rock, paper or scissors", "Rock");
+    if (promptMessage === null) {
+        return "false"; 
+    }
+    promptMessage = promptMessage.toLowerCase();
 
     switch (promptMessage) {
         case "rock":
-            human_choice = "Rock";
+            human_choice = "rock";
             break;
         case "paper":
-            human_choice = "Paper";
+            human_choice = "paper";
             break;
         case "scissors":
-            human_choice = "Scissors";
+            human_choice = "scissors";
             break;
         default:
             human_choice = "false";
@@ -46,16 +54,7 @@ function getHumanChoice() {
 
 }
 
-function playRound(computer = getComputerChoice(), human = getHumanChoice()) {
-
-    let winner;
-
-    if (human == "false") {
-        while (human == "false") {
-            console.log("wrong input");
-            human = getHumanChoice();
-        }
-    }
+function playRound(computer, human) {
 
     if (human == computer) {
         console.log(human);
@@ -67,7 +66,7 @@ function playRound(computer = getComputerChoice(), human = getHumanChoice()) {
         (computer == "scissors" && human == "paper")) {
         console.log(human)
         console.log(computer)
-        consol.log("computer wins");
+        console.log("computer wins");
         winner = "computer";
         computer_score++;
     } else {
@@ -78,5 +77,5 @@ function playRound(computer = getComputerChoice(), human = getHumanChoice()) {
         human_score++;
     }
     return winner;
-
 }
+

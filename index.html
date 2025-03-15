@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="header">
@@ -16,24 +17,31 @@
             <h2>Best of 5 - choose your weapon</h2>
             <div class="score_counter">
                 <div class="score_counter_box" id="player_box">
-                    <p>Player</p>
+                    <div class="last_move" id="player">?</div>
+                    <p>Player: 0</p>
                 </div>
                 <div class="score_counter_box"id="computer_box">
-                    <p>Computer</p>
+                    <div class="last_move" id="computer">?</div>
+                    <p>Computer: 0</p>
                 </div>
             </div>
         </div>
         <div class="choices">
-            <button id="rock"></button>
-            <button id="paper"></button>
-            <button id="scissor"></button>
+            <button id="rock">
+                <p>R</p>
+            </button>
+            <button id="paper">
+                <p>P</p>
+            </button>
+            <button id="scissors">
+                <p>S</p>
+            </button>
         </div>
     </div>
     <div class="footer">
         <p> Copyright Kajetan</p>
     </div>
-    <script src="game.js">
-
-    </script>
+    <script src="game.js" defer></script>
+    <script src="events.js" defer></script>
 </body>
 </html>
